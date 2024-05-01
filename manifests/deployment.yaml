@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uibakery
+  labels:
+    app: uibakery
+  namespace: namespace-workflow-1714549144788
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uibakery
+  template:
+    metadata:
+      labels:
+        app: uibakery
+    spec:
+      containers:
+        - name: uibakery
+          image: acrworkflow1714549144788.azurecr.io/image-workflow-1714549144788:latest
+          ports:
+            - containerPort: 3000
