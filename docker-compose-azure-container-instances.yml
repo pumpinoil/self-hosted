@@ -62,11 +62,11 @@ services:
     restart: always
     environment:
       - UI_BAKERY_LICENSE_KEY=${UI_BAKERY_LICENSE_KEY:-PUT_LICENCE_HERE}
-      - UI_BAKERY_DB_HOST=${UI_BAKERY_DB_HOST:-azure-container-instance-test-db.mysql.database.azure.com}
+      - UI_BAKERY_DB_HOST=${UI_BAKERY_DB_HOST:-dt-web-server.mysql.database.azure.com}
       - UI_BAKERY_DB_PORT=${UI_BAKERY_DB_PORT:-3306}
       - UI_BAKERY_DB_DATABASE=${UI_BAKERY_DB_DATABASE:-bakery}
-      - UI_BAKERY_DB_USERNAME=${UI_BAKERY_DB_USERNAME:-uibakeryuser@azure-container-instance-db}
-      - UI_BAKERY_DB_PASSWORD=${UI_BAKERY_DB_PASSWORD:-uibakerypassword}
+      - UI_BAKERY_DB_USERNAME=${UI_BAKERY_DB_USERNAME:-dt_ws_MySQL@azure-container-instance-db}
+      - UI_BAKERY_DB_PASSWORD=${UI_BAKERY_DB_PASSWORD:-AIK9ai(wgB7Mmb!3}
     deploy:
       resources:
         limits:
