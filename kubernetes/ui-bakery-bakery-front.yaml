@@ -12,14 +12,21 @@ spec:
       labels:
         app: ui-bakery-front
     spec:
-      containers:
-      - name: ui-bakery-front
-        image: cruibakeryonprem.azurecr.io/cloud/bakery-front:latest
-        envFrom:
-          - configMapRef:
-              name: ui-bakery-configmap
-        ports:
-          - containerPort: 8080
+        containers:
+        - name: ui-bakery-front
+          image: cruibakeryonprem.azurecr.io/cloud/bakery-front:latest
+          envFrom:
+            - configMapRef:
+                name: ui-bakery-configmap
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
 ---
 apiVersion: v1
 kind: Service

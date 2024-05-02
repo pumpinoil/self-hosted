@@ -32,19 +32,26 @@ spec:
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
-          value: root
+          value: AIK9ai(wgB7Mmb!3
         - name: MYSQL_PASSWORD
-          value: bakery
+          value: AIK9ai(wgB7Mmb!3
         - name: MYSQL_DATABASE
           value: bakery
         - name: MYSQL_USER
-          value: bakery
+          value: dt_ws_MySQL
         ports:
         - containerPort: 3306
           name: mysql
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
