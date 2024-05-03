@@ -41,7 +41,8 @@ spec:
               name: postgres
           volumeMounts:
             - name: postgres-persistent-storage
-              mountPath: /var/lib/postgresql/data
+              mountPath: /var/lib/postgresql/data  # Ensure this is the correct mount path
+              subPath: bakery-data  # This specifies a subdirectory under the volume's root
           resources:
             limits:
               cpu: "1"

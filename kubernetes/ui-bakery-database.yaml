@@ -6,6 +6,7 @@ metadata:
 spec:
   ports:
   - port: 3306
+    targetPort: 3306
   selector:
     app: mysql
   clusterIP: None
@@ -30,15 +31,14 @@ spec:
       - image: mysql:8.0
         name: mysql
         env:
-          # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
           value: AIK9ai(wgB7Mmb!3
         - name: MYSQL_PASSWORD
-          value: AIK9ai(wgB7Mmb!3
+          value: bakery
         - name: MYSQL_DATABASE
           value: bakery
         - name: MYSQL_USER
-          value: dt_ws_MySQL
+          value: bakery
         ports:
         - containerPort: 3306
           name: mysql

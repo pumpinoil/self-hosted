@@ -27,6 +27,14 @@ spec:
             cpu: "900m"
         ports:
           - containerPort: 8080
+        volumeMounts:
+        - name: mysql-certs
+          mountPath: /etc/mysql-ssl
+          readOnly: true  # Ensure that the certificates are mounted as read-only
+      volumes:
+      - name: mysql-certs
+        secret:
+          secretName: mysql-tls-certs
 ---
 apiVersion: v1
 kind: Service

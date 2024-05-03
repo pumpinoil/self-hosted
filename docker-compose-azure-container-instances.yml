@@ -6,7 +6,7 @@ services:
       - "bakery-front"
       - "workbench-front"
       - "bakery-back"
-    image: cruibakeryonprem.azurecr.io/cloud/gateway:aci-2.28.1
+    image: dtregistry.azurecr.io/cloud/gateway:aci-2.28.1
     deploy:
       resources:
         limits:
@@ -18,7 +18,7 @@ services:
 
   bakery-front:
     container_name: bakery-front
-    image: cruibakeryonprem.azurecr.io/cloud/bakery-front:aci-2.28.1
+    image: dtregistry.azurecr.io/cloud/bakery-front:aci-2.28.1
     restart: always
     environment:
       - UI_BAKERY_APP_SERVER_NAME=https://123.123.123.123:80
@@ -32,7 +32,7 @@ services:
 
   workbench-front:
     container_name: workbench-front
-    image: cruibakeryonprem.azurecr.io/cloud/workbench-front:aci-2.28.1
+    image: dtregistry.azurecr.io/cloud/workbench-front:aci-2.28.1
     restart: always
     environment:
       - UI_BAKERY_APP_SERVER_NAME=https://123.123.123.123:80
@@ -46,7 +46,7 @@ services:
 
   datasource:
     container_name: datasource
-    image: cruibakeryonprem.azurecr.io/cloud/datasource:2.28.1
+    image: dtregistry.azurecr.io/cloud/datasource:2.28.1
     restart: always
     deploy:
       resources:
@@ -58,7 +58,7 @@ services:
 
   bakery-back:
     container_name: bakery-back
-    image: cruibakeryonprem.azurecr.io/cloud/bakery-back:2.28.1
+    image: dtregistry.azurecr.io/cloud/bakery-back:2.28.1
     restart: always
     environment:
       - UI_BAKERY_LICENSE_KEY=${UI_BAKERY_LICENSE_KEY:-PUT_LICENCE_HERE}
